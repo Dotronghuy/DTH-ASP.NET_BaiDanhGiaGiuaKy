@@ -1,0 +1,64 @@
+﻿@model ĐthBaiDanhGiaGiuaKy.Models.ĐthProduct
+
+@{
+    ViewBag.Title = "DthDelete";
+}
+
+<h2>Confrim delete</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ĐthName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ĐthName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ĐthImage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ĐthImage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ĐthQuanlity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ĐthQuanlity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ĐthPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ĐthPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DdthIssActive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DdthIssActive)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm("DthDelete", "DthCRUD", new { id = Model.ĐthID }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Delete" class="btn btn-danger" />
+                @Html.ActionLink("Cancel", "DthIndex", null, new { @class = "btn btn-default" })
+            </div>
+        </div>
+    }
+</div>

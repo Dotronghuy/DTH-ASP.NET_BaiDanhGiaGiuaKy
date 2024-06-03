@@ -1,0 +1,51 @@
+﻿@model IEnumerable<ĐthBaiDanhGiaGiuaKy.Models.ĐthProduct>
+
+@{
+    ViewBag.Title = "DthIndex";
+}
+
+<h2>DthIndex: show list product</h2>
+
+<p>
+    @Html.ActionLink("Create New", "DthCreate")
+</p>
+<table class="table table-bordered">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ĐthName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ĐthImage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ĐthQuanlity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ĐthPrice)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var dthitem in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => dthitem.ĐthName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => dthitem.ĐthImage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => dthitem.ĐthQuanlity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => dthitem.ĐthPrice)
+        </td>
+        <td>
+            @Html.ActionLink("DthEdit", "DthEdit", new { id = dthitem.ĐthID }) |
+            @Html.ActionLink("DthDetails", "DthDetails", new { id = dthitem.ĐthID }) |
+            @Html.ActionLink("DthDelete", "DthDelete", new { id = dthitem.ĐthID })
+        </td>
+    </tr>
+}
+
+</table>
